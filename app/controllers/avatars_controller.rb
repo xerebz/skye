@@ -1,9 +1,13 @@
 class AvatarsController < ApplicationController
   def index
     @avatars = Avatar.all
+    @images = Dir.glob("app/assets/images/MaleA*.png")
   end
   def create
-      render plain: params[:avatar].inspect
+      @article = Article.new(params[:article])
+       
+        @article.save
+          redirect_to @article
   end
   def new
   end
