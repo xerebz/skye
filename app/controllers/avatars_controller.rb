@@ -1,7 +1,8 @@
 class AvatarsController < ApplicationController
   def index
     @avatars = Avatar.all
-    @images = Dir.glob("app/assets/images/MaleA*.png")
+    @males = Dir.glob("app/assets/images/MaleA*.png")
+    @females = Dir.glob("app/assets/images/FemaleA*.png")
   end
   def create
       @article = Article.new(params[:article])
