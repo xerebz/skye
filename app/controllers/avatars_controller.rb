@@ -11,6 +11,8 @@ class AvatarsController < ApplicationController
           redirect_to @article
   end
   def new
+    @males = Dir.glob("app/assets/images/MaleA*.png")
+    @females = Dir.glob("app/assets/images/FemaleA*.png")
   end
   def edit
   end
