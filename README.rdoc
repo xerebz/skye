@@ -1,3 +1,9 @@
 == Skye: Endless Realm Avatar System
 
 STUFFGOEZHERE
+Alain Leon
+i'd suggest linux
+
+install ruby then rails
+then clone the github repo
+and that'll work with a 2% chance of success
