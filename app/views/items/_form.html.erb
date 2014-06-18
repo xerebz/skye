@@ -1,0 +1,18 @@
+<%= form_for(@item, :html => { :multipart => true }) do |f| %>
+  <div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<p>Hold Ctrl while selecting to upload multiple image layers:</p>
+<%= f.fields_for :images do |p| %>
+  <div class="field">
+  <%= p.label :image_layer %><br>
+  <%= p.file_field :image_layer, :multiple => true, name: "images[image_layer][]" %>
+</div>
+      <% end %>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+       <% end %>
+       <p></p>

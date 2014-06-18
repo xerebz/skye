@@ -1,0 +1,5 @@
+<div>Name: <%= @item.name %></div>
+<% @item.images.each do |p| %>
+    <%= image_tag p.image_layer_url %>
+  <% end %>
+<p><%= link_to "Back to Item Catalog", items_path %></p>

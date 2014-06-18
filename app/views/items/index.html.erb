@@ -1,1 +1,13 @@
 <h1>Item Catalog</h1>
+<div>
+<% @items.each do |item| %>
+  <p>
+  <%= item.name %>
+  <%= link_to "Show", item_path(item) %>
+  <%= link_to "Edit", edit_item_path(item) %>
+  <%= link_to 'Destroy', item_path(item),
+                      method: :delete, data: { confirm: 'Delete?' } %>
+  </p>
+<% end %>
+</div>
+<%= link_to "Add Item", new_item_path %> - <%= link_to "Home", root_path %>
