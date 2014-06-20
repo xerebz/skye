@@ -1,12 +1,18 @@
 == Skye: Endless Realm Avatar System
 
-STUFFGOEZHERE
-Alain Leon
+Alain Leon (xerebz@gmail.com)
 
-i'd suggest linux
+how to run this demo from scratch on ubuntu 14.04:
 
-install ruby then rails
-
-then clone the github repo
-
-and that'll work with a 2% chance of success
+clone this directory
+use rvm to install latest rails (developed on 4.1.1)
+install postgresql
+sudo -u postgres psql
+create role avatar_demo with createdb login password 'avatar';
+install libpq-dev (to be able to build postgres gem)
+install nodejs (to have a javascript runtime)
+bundle install in the avatar_demo directory
+rake db:create db:migrate
+rails server to run the demo
+open a browser to localhost:3000
+gg
