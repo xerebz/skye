@@ -12,7 +12,18 @@ $('.avatars.new').ready ->
     height: 680
 
   layer = new Kinetic.Layer
+  bg = new Kinetic.Layer
+  stage.add bg
   stage.add layer
+  bgimg = new Image
+  bgimg.onload = ->
+    bitmap = new Kinetic.Image
+      image: bgimg
+    bg.add bitmap
+    bg.draw()
+  bgimg.src = "/assets/HomecomingTrail-Background.png"
+
+    
 
   arts = {}
   pieces = {}
