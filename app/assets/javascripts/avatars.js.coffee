@@ -11,27 +11,32 @@ $('.avatars.new').ready ->
     width: 625
     height: 680
 
-  #This method loads a layer with an image and draws it onto the stage
-  putOn = (item) ->
-    imageObj = new Image
-    imageObj.src = "/assets/"+item+".png"
-    layer = new Kinetic.Layer
-    bitmap = new Kinetic.Image
-      image: imageObj
-    layer.add bitmap
-    stage.add layer
-    layer.draw
+  layer = new Kinetic.Layer
+  stage.add layer
 
-  redraw = ->
-    putOn sex+skin+'_'+bodyPart for bodyPart in bodyParts 
+  arts = {}
+  pieces = {}
+  for part in bodyParts
+    art = new Image
+    art.src = "/assets/"+sex+skin+'_'+part+".png"
+    arts[part] = art
+    piece = new Kinetic.Image
+      image: arts[part]
+    pieces[part] = piece
+    layer.add piece
+    layer.draw()
 
-  wear = (element) ->
-    skin = element.id
-    redraw
+  $ ->
+    $("#skin-menu a").click ->
+      skin = @id
+      for part in bodyParts
+        arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
+        arts[part].onload = ->
+          layer.draw()
 
-  sexChange = (element) ->
-    sex = element.id
-    redraw
-
-  #draw initial body
-  redraw
+    $("#sex-menu a").click ->
+      sex = @id
+      for part in bodyParts
+        arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
+        arts[part].onload = ->
+          layer.draw()
