@@ -23,8 +23,6 @@ $('.avatars.new').ready ->
     bg.draw()
   bgimg.src = "/assets/HomecomingTrail-Background.png"
 
-    
-
   arts = {}
   pieces = {}
   for part in bodyParts
@@ -51,3 +49,6 @@ $('.avatars.new').ready ->
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
+    blah = 0
+    $("#img1").click ->
+      alert 'todo'
