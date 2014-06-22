@@ -7,12 +7,13 @@ how to run this demo from scratch on ubuntu 14.04:
 clone this directory
 use rvm to install latest rails (developed on 4.1.1)
 install postgresql
-sudo -u postgres psql
-create role avatar_demo with createdb login password 'avatar';
+create the role for the demo and set the password to 'avatar':
+sudo -u postgres createuser -d avatar_demo -P
 install libpq-dev (to be able to build postgres gem)
 install nodejs (to have a javascript runtime)
 bundle install in the avatar_demo directory
-rake db:create db:migrate
+setup seed table entries in database:
+rake db:setup
 rails server to run the demo
 open a browser to localhost:3000
 gg
