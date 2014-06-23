@@ -1,6 +1,10 @@
 <h1>avatar showcase</h1>
 <div id="container"></div>
-<div id="item-menu"><img id="img1" src="/assets/ReubenStyledSporty-PaleFawn-Hairstyle.png" width='100px' hieght='100px'</div>
+<div id="item-menu">
+<% @items.each do |item| %>
+<%= image_tag (item.images.first.image_layer_url) %>
+<% end %>
+</div>
 
 <div id="skin-menu">
 	<a id='A'>A</a>
