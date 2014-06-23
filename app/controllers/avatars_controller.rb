@@ -3,13 +3,13 @@ class AvatarsController < ApplicationController
     @avatars = Avatar.all
   end
   def create
-      @article = Article.new(params[:article])
+      @avatar = avatar.new(avatar_params)
        
-        @article.save
-          redirect_to @article
+        @avatar.save
+          redirect_to @avatar
   end
   def new
-    @items = Item.take(4)
+    @items = Item.all
   end
   def edit
   end
@@ -18,5 +18,9 @@ class AvatarsController < ApplicationController
   def update
   end
   def destroy
+  end
+  private
+  def avatar_params
+    params.require(:avatar).permit(:name, :sex, :skin_tone)
   end
 end

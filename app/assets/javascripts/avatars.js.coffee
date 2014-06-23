@@ -50,5 +50,10 @@ $('.avatars.new').ready ->
         arts[part].onload = ->
           layer.draw()
     blah = 0
-    $("#img1").click ->
-      alert 'todo'
+    $("#item-menu img").click ->
+      imageObj = new Image
+      wearable = new Kinetic.Image
+        image: imageObj
+      imageObj.src = @src
+      layer.add(wearable)
+      layer.draw()

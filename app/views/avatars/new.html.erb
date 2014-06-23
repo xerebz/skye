@@ -2,7 +2,7 @@
 <div id="container"></div>
 <div id="item-menu">
 <% @items.each do |item| %>
-<%= image_tag (item.images.first.image_layer_url) %>
+<%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px' %>
 <% end %>
 </div>
 
