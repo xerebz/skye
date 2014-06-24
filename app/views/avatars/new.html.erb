@@ -1,8 +1,11 @@
 <h1>avatar showcase</h1>
 <div id="container"></div>
 <div id="item-menu">
-<% @items.each do |item| %>
-<%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px' %>
+
+<%= paginate @items %>
+
+<% for item in @items %>
+<%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
 <% end %>
 </div>
 
