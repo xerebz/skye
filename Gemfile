@@ -6,7 +6,6 @@ gem 'sass-rails' #sass for css
 gem 'coffee-rails' #coffeescript for js
 gem 'carrierwave' #uploads
 gem 'acts-as-taggable-on' #tagging
-gem 'kaminari' #pagination
 gem 'jquery-rails' #jquery
 gem 'turbolinks' #turbolinks
 gem 'jquery-turbolinks' #jquery working with turbolinks

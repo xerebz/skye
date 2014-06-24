@@ -1,24 +1,29 @@
-<h1>avatar showcase</h1>
-<div id="container"></div>
-<div id="item-menu">
+<h1>Try On Demo</h1>
 
-<%= paginate @items %>
+<div id="container">
+</div>
 
-<% for item in @items %>
-<%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
-<% end %>
+<div id="item-menu" >
+  <% for item in @items %>
+	  <%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
+  <% end %>
 </div>
 
 <div id="skin-menu">
-	<a id='A'>A</a>
-	<a id='B'>B</a>
-	<a id='C'>C</a>
-	<a id='D'>D</a>
-	<a id='E'>E</a>
-	<a id='F'>F</a>
+  <a id='A'>A</a>
+  <a id='B'>B</a>
+  <a id='C'>C</a>
+  <a id='D'>D</a>
+  <a id='E'>E</a>
+  <a id='F'>F</a>
 </div>
+
 <div id="sex-menu">
-	<a id='Male'>Male</a>
-	<a id='Female'>Female</a>
+  <a id='Male'>Male</a>
+  <a id='Female'>Female</a>
 </div>
+
+<div id="clear-clothes">
+  Clear
+ </div>
 

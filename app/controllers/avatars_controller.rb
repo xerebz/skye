@@ -9,7 +9,7 @@ class AvatarsController < ApplicationController
           redirect_to @avatar
   end
   def new
-    @items = Item.all.page(params[:page]).per(18)
+    @items = Item.all
   end
   def edit
   end

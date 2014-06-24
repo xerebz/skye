@@ -13,8 +13,10 @@ $('.avatars.new').ready ->
 
   layer = new Kinetic.Layer
   bg = new Kinetic.Layer
+  clothes = new Kinetic.Layer
   stage.add bg
   stage.add layer
+  stage.add clothes
   bgimg = new Image
   bgimg.onload = ->
     bitmap = new Kinetic.Image
@@ -55,5 +57,8 @@ $('.avatars.new').ready ->
       wearable = new Kinetic.Image
         image: imageObj
       imageObj.src = @src
-      layer.add(wearable)
-      layer.draw()
+      clothes.add(wearable)
+      clothes.draw()
+    $("#clear-clothes").click ->
+      clothes.destroyChildren()
+      clothes.draw()
