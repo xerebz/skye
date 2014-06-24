@@ -2,18 +2,19 @@
 
 Alain Leon (xerebz@gmail.com)
 
-how to run this demo from scratch on ubuntu 14.04:
+Setup for an Ubuntu 14.04 fresh install:
 
-clone this directory
-use rvm to install latest rails (developed on 4.1.1)
-install postgresql
-create the role for the demo and set the password to 'avatar':
+1. Clone this repository
+2. Use RVM to install the latest Ruby on Rails
+3. Install PostgreSQL
+4. Create the PostgreSQL role 'avatar_demo' and set the password to 'avatar'
 sudo -u postgres createuser -d avatar_demo -P
-install libpq-dev (to be able to build postgres gem)
-install nodejs (to have a javascript runtime)
-bundle install in the avatar_demo directory
-setup seed table entries in database:
+5. Install libpq-dev to be able to build the pg gem
+6. Install Node.js or any other JavaScript runtime
+7. Use bundler to install the dependencies
+8. Setup the database
 rake db:setup
-rails server to run the demo
-open a browser to localhost:3000
-gg
+9. Run WEBrick to run the project
+rails server or rails server -d
+10. Open a browser to http://localhost:3000
+GG
