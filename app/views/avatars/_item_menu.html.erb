@@ -1,3 +1,10 @@
-<% @images.each do |image| %>
-	   <%= image_tag "#{image.split('/').last}", size: "50x50" %>
- <% end %>
+<% form_tag items_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<% for item in @items %>
+  <%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
+<% end %>

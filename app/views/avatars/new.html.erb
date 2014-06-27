@@ -4,10 +4,20 @@
 </div>
 
 <div id="item-menu" >
-  <% for item in @items %>
-	  <%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
-  <% end %>
+Hi
+
+
+<% for item in @items %>
+  <%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail'%>
+<% end %>
 </div>
+
+<%= form_tag new_avatar_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <div id="skin-menu">
   <a id='A'>A</a>

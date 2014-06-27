@@ -9,7 +9,7 @@ class AvatarsController < ApplicationController
           redirect_to @avatar
   end
   def new
-    @items = Item.all
+    @items = Item.search(params[:search])
   end
   def edit
   end
