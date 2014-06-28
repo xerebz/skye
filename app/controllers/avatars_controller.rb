@@ -4,10 +4,10 @@ class AvatarsController < ApplicationController
     @avatar = current_user.avatar
   end
   def create
-      @avatar = current_user.avatar.create(avatar_params)
+      @avatar = current_user.create_avatar(avatar_params)
        
         @avatar.save
-          redirect_to @avatar
+          redirect_to edit_avatar_path(@avatar)
   end
   def new
     @avatar = Avatar.new
@@ -20,6 +20,8 @@ class AvatarsController < ApplicationController
   def update
   end
   def destroy
+    current_user.avatar.destroy
+    redirect_to avatars_path
   end
   private
   def avatar_params

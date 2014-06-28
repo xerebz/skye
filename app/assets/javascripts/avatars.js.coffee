@@ -38,25 +38,18 @@ $('.avatars.new, .avatars.edit').ready ->
       layer.draw()
     art.src = "/assets/"+sex+skin+'_'+part+".png"
     arts[part] = art
-
+    
   $ ->
-    $("#skin-menu a").first().addClass('selected')
 
-    $("#skin-menu a").click ->
-      $("#skin-menu a").removeClass('selected')
-      $(this).addClass('selected')
-      skin = @id
+    $("input[name='avatar[sex]']").click ->
+      sex = $(this).val()
       for part in bodyParts
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
 
-    $("#sex-menu a").first().addClass('selected')
-
-    $("#sex-menu a").click ->
-      $("#sex-menu a").removeClass('selected')
-      $(this).addClass('selected')
-      sex = @id
+    $("input[name='avatar[skin_tone]']").click ->
+      skin = $(this).val()
       for part in bodyParts
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
