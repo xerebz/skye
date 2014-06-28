@@ -18,10 +18,6 @@
 //= require_tree .
 
 $(function() {
-  // $("#item-menu img, #items .pagination a").on("click", function() {
-  //   $.getScript(this.href);
-  //   return false;
-  // });
   $("#items_search input").keyup(function() {
     $.get($("#items_search").attr("action"), $("#items_search").serialize(), null, "script");
     return false;

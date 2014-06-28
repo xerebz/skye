@@ -55,10 +55,6 @@ $('.avatars.new, .avatars.edit').ready ->
         arts[part].onload = ->
           layer.draw()
 
-$('.avatars.edit').ready ->
-
-  $ ->
-
     $("#item-menu img").click ->
       imageObj = new Image
       wearable = new Kinetic.Image
