@@ -1,4 +1,7 @@
 <h1>Item Catalog</h1>
+
+<%= link_to "Add Item", new_item_path %>
+
 <div>
 <% @items.each do |item| %>
   <p>
@@ -10,4 +13,4 @@
   </p>
 <% end %>
 </div>
-<%= link_to "Add Item", new_item_path %> - <%= link_to "Home", root_path %>
+

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Skye: Endless Realm Avatar Demo</title>
+  <%= include_gon %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +10,19 @@
 <body class="<%= controller_name %> <%= action_name %>">
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %> - 
+  <%= render 'devise/menu/login_items' %>
+</ul>
 
-<%= yield %>
+<div id="content">
+  <%= yield %>
+</div>
 
+<hr>
+
+<div id="footer">
+ <%= link_to "Home", root_path %> - <%= link_to "Avatar", avatars_path %> - <%= link_to "Items", items_path %>
+</div>
 </body>
 </html>

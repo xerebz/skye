@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!,
-    :only => [:new, :destroy]
+    :only => [:new, :destroy, :edit]
   def index
     @items = Item.search(params[:search])
   end
