@@ -11,8 +11,11 @@ class AvatarsController < ApplicationController
   end
   def new
     @avatar = Avatar.new
+    gon.avatar = @avatar
   end
   def edit
+    @avatar = current_user.avatar
+    gon.avatar = @avatar
     @items = Item.search(params[:search])
   end
   def show
