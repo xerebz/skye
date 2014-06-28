@@ -1,3 +1,36 @@
-<h1>edit avatar</h1>
-put on all these clothes!
-only noob clothes available, must unlock more
+<h1>Try On Demo</h1>
+
+<div id="container">
+</div>
+
+<div id="item-menu" >
+  <%= render "item_menu" %>
+</div>
+
+<div id="search-menu">
+  <%= form_tag new_avatar_path, :method => 'get', :id => 'items_search' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+</div>
+
+<div id="skin-menu">
+  <a id='A'>A</a>
+  <a id='B'>B</a>
+  <a id='C'>C</a>
+  <a id='D'>D</a>
+  <a id='E'>E</a>
+  <a id='F'>F</a>
+</div>
+
+<div id="sex-menu">
+  <a id='Male'>Male</a>
+  <a id='Female'>Female</a>
+</div>
+
+<div id="clear-clothes">
+  Clear
+ </div>
+

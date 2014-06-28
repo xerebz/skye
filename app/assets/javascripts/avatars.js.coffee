@@ -17,6 +17,7 @@ $('.avatars.new').ready ->
   stage.add bg
   stage.add layer
   stage.add clothes
+
   bgimg = new Image
   bgimg.onload = ->
     bitmap = new Kinetic.Image
@@ -29,15 +30,15 @@ $('.avatars.new').ready ->
   pieces = {}
   for part in bodyParts
     art = new Image
+    art.onload = ->
+      piece = new Kinetic.Image
+        image: this
+      layer.add piece
+      layer.draw()
     art.src = "/assets/"+sex+skin+'_'+part+".png"
-    arts[part] = art
-    piece = new Kinetic.Image
-      image: arts[part]
-    pieces[part] = piece
-    layer.add piece
-    layer.draw()
 
   $ ->
+
     $("#skin-menu a").click ->
       skin = @id
       for part in bodyParts
@@ -51,7 +52,7 @@ $('.avatars.new').ready ->
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
-    blah = 0
+
     $("#item-menu img").click ->
       imageObj = new Image
       wearable = new Kinetic.Image
@@ -59,6 +60,16 @@ $('.avatars.new').ready ->
       imageObj.src = @src
       clothes.add(wearable)
       clothes.draw()
+
+    $('#item-menu').bind 'contentchanged', ->
+      $("#item-menu img").click ->
+        imageObj = new Image
+        wearable = new Kinetic.Image
+          image: imageObj
+        imageObj.src = @src
+        clothes.add(wearable)
+        clothes.draw()
+
     $("#clear-clothes").click ->
       clothes.destroyChildren()
       clothes.draw()
