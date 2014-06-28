@@ -1,19 +1,20 @@
-$('.avatars.new').ready ->
+$('.avatars.new, .avatars.edit').ready ->
 
   #Body parts will be drawn in this order
-  sex = 'Female'
+  sex = 'Male'
   skin = 'A'
   bodyParts = ['Arm_Front','Hand_Front','Torso','Arm_Back','Hand_Back','Feet','Legs','Head']
 
   #Stage where the avatar pieces will be laid together
   stage = new Kinetic.Stage
-    container: 'container'
+    container: 'avatar-canvas'
     width: 625
     height: 680
 
   layer = new Kinetic.Layer
   bg = new Kinetic.Layer
   clothes = new Kinetic.Layer
+
   stage.add bg
   stage.add layer
   stage.add clothes
@@ -39,20 +40,31 @@ $('.avatars.new').ready ->
     arts[part] = art
 
   $ ->
+    $("#skin-menu a").first().addClass('selected')
 
     $("#skin-menu a").click ->
+      $("#skin-menu a").removeClass('selected')
+      $(this).addClass('selected')
       skin = @id
       for part in bodyParts
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
 
+    $("#sex-menu a").first().addClass('selected')
+
     $("#sex-menu a").click ->
+      $("#sex-menu a").removeClass('selected')
+      $(this).addClass('selected')
       sex = @id
       for part in bodyParts
         arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
+
+$('.avatars.edit').ready ->
+
+  $ ->
 
     $("#item-menu img").click ->
       imageObj = new Image

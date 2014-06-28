@@ -1,7 +1,7 @@
 <h1>Avatar Menu</h1>
-
-<p><%= link_to 'Create New', new_avatar_path %></p>
-<% if @avatar %>
-<p><%= link_to 'Edit Avatar', edit_avatar_path(@avatar) %></p>
+<% unless @avatar %>
+  <p><%= link_to 'Create New', new_avatar_path %></p>
+<% else %>
+  <p><%= link_to 'Edit Avatar', edit_avatar_path(@avatar) %></p>
 <% end %>
 <p> <%= link_to "Home", root_path %>

@@ -4,16 +4,16 @@ class AvatarsController < ApplicationController
     @avatar = current_user.avatar
   end
   def create
-      @avatar = Avatar.new(avatar_params)
+      @avatar = current_user.avatar.create(avatar_params)
        
         @avatar.save
           redirect_to @avatar
   end
   def new
-    @avatar = Avatar.new(:user_id => current_user.id)
-    @items = Item.search(params[:search])
+    @avatar = Avatar.new
   end
   def edit
+    @items = Item.search(params[:search])
   end
   def show
   end
@@ -23,6 +23,6 @@ class AvatarsController < ApplicationController
   end
   private
   def avatar_params
-    params.require(:avatar).permit(:name, :sex, :skin_tone)
+    params.require(:avatar).permit(:name, :sex, :skin_tone, :user_id)
   end
 end

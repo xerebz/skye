@@ -1,22 +1,10 @@
-<h1>Try On Demo</h1>
+<h1>Create your new Avatar!</h1>
 
-<div id="container">
-</div>
-
-<div id="item-menu" >
-  <%= render "item_menu" %>
-</div>
-
-<div id="search-menu">
-  <%= form_tag new_avatar_path, :method => 'get', :id => 'items_search' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
+<div id="avatar-canvas">
 </div>
 
 <div id="skin-menu">
+  <div id="title">Select your skin tone:</div>
   <a id='A'>A</a>
   <a id='B'>B</a>
   <a id='C'>C</a>
@@ -25,12 +13,43 @@
   <a id='F'>F</a>
 </div>
 
+<br/>
+
 <div id="sex-menu">
+  <div id="title">Select your gender:</div>
   <a id='Male'>Male</a>
   <a id='Female'>Female</a>
 </div>
 
-<div id="clear-clothes">
-  Clear
- </div>
+<br/>
 
+<div>
+  Done!
+</div>
+
+<%= form_for @avatar do |f| %>
+  <% if @avatar.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@avatar.errors.count, "error") %> prohibited
+      this avatar from being saved:</h2>
+    <ul>
+    <% @avatar.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :sex %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :skintone %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
