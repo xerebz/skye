@@ -27,7 +27,7 @@ $('.avatars.new').ready ->
   bgimg.src = "/assets/HomecomingTrail-Background.png"
 
   arts = {}
-  pieces = {}
+
   for part in bodyParts
     art = new Image
     art.onload = ->
@@ -36,6 +36,7 @@ $('.avatars.new').ready ->
       layer.add piece
       layer.draw()
     art.src = "/assets/"+sex+skin+'_'+part+".png"
+    arts[part] = art
 
   $ ->
 
