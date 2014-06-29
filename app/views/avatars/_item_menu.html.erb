@@ -1,7 +1,3 @@
 <% for item in @items %>
-  <% if item.images.exists? %>
   <%= image_tag (item.images.first.image_layer_url), width: '100px', height: '100px', class: 'item-thumbnail' %>
-  <% else %>
-    <%= item.name %>
-  <% end %>
 <% end %>

@@ -1,7 +1,3 @@
-#TODOOOOOOo
-
-#seeding the database with items
-
 Item.create!([
   {name: "BehindTheBlossoms-Pink-Hairstyle", category: "hair"},# primary_color: "Pink", secondary_color: nil, tags: "Behind The Blossoms"},
   {name: "BehindTheBlossoms-Lavender-Hairstyle", category: "hair"},# primary_color: "Lavender", secondary_color: nil, tags: "Behind The Blossoms"},
@@ -85,7 +81,7 @@ image_layers = Dir.glob(uploads_directory+"*")
 image_layers.each do |image_layer|
   item_name = File.basename(image_layer,".*")
   item_name.sub!(/^\dof\d/,'')
-  item = Item.find_or_create_by(name:item_name)
+  item = Item.find(name:item_name)
   image = Image.create!(:item => item)
   image.image_layer = File.open(image_layer)
   item.images << image
