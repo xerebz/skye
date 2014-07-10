@@ -7,7 +7,7 @@ Setup for an Ubuntu 14.04 fresh install:
 1. Clone this repository
 2. Use RVM to install the latest Ruby on Rails
 3. Install PostgreSQL
-4. Create the PostgreSQL role 'avatar_demo' and set the password to 'avatar'
+4. Create the PostgreSQL role with username 'avatar_demo' and set the password to 'avatar'
 sudo -u postgres createuser -d avatar_demo -P
 5. Install libpq-dev to be able to build the pg gem
 6. Install Node.js or any other JavaScript runtime
@@ -18,3 +18,17 @@ rake db:setup
 rails server or rails server -d
 10. Open a browser to http://localhost:3000
 GG
+
+Setup for a Windows 7 fresh install:
+1. Use RailsInstaller to get Ruby on Rails for Windows
+2. Install postgresql for windows from enterprisedb http://www.enterprisedb.com/products/pgdownload.do#windows
+3. Create the PostgreSQL role with username 'avatar_demo' 
+Open pgAdmin and create a new role (right click login roles -> new login role)
+Under definition, set the password to 'avatar'
+Under role privileges check off can create databases
+4. Get github for windows to clone the repo to C:\sites
+5. Set up the database (use Command prompt with Ruby on Rails)
+rake db:setup
+The tables will be now be available in pgAdmin under databases/avatar_dev/schemas/public/tables
+6. Run the server
+rails server
