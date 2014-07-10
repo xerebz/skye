@@ -77,11 +77,14 @@ Item.create!([
 #hook up the contents of the image uploads directory with the appropriate item
 
 uploads_directory = Rails.root.join("public","uploads","image","image_layer")
+puts uploads_directory
 image_layers = Dir.glob(uploads_directory+"*")
+puts image_layers
 image_layers.each do |image_layer|
   item_name = File.basename(image_layer,".*")
+  puts item_name
   item_name.sub!(/^\dof\d/,'')
-  item = Item.find(name:item_name)
+  item = Item.find_by name: item_name
   image = Image.create!(:item => item)
   image.image_layer = File.open(image_layer)
   item.images << image
