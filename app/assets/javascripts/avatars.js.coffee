@@ -2,8 +2,8 @@ $('.avatars.new, .avatars.edit').ready ->
 
   #Body parts will be drawn in this order
 
-  sex = gon.avatar.sex || "Male"
-  skin = gon.avatar.skin_tone || "A"
+  sex = if gon.avatar then gon.avatar.sex else "Male"
+  skin = if gon.avatar then gon.avatar.skin_tone else "A"
   bodyParts = ['Arm_Front','Hand_Front','Torso','Arm_Back','Hand_Back','Feet','Legs','Head']
 
   #Stage where the avatar pieces will be laid together
@@ -30,15 +30,16 @@ $('.avatars.new, .avatars.edit').ready ->
 
   arts = {}
 
-  for part in bodyParts
-    art = new Image
-    art.onload = ->
-      piece = new Kinetic.Image
-        image: this
-      layer.add piece
-      layer.draw()
-    art.src = "/assets/"+sex+skin+'_'+part+".png"
-    arts[part] = art
+  redraw = ->
+    for part in bodyParts
+      art = new Image
+      art.onload = ->
+        piece = new Kinetic.Image
+          image: this
+        layer.add piece
+        layer.draw()
+      art.src = "/assets/"+sex+skin+'_'+part+".png"
+      arts[part] = art
     
   $ ->
 
@@ -76,3 +77,5 @@ $('.avatars.new, .avatars.edit').ready ->
     $("#clear-clothes").click ->
       clothes.destroyChildren()
       clothes.draw()
+
+    redraw()
