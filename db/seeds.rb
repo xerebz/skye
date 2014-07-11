@@ -4,7 +4,7 @@ Item.create!([
 
   {name: "BehindTheBlossoms-Pink-Hairstyle", category: "hair", sex: "neutral"},
   {name: "BehindTheBlossoms-Lavender-Hairstyle", category: "hair", sex: "neutral"},
-  {name: "WarmThermal-Snow-LongSleevedShirt", category: "shirt", sex: "neutral"},
+  {name: "WarmThermal-Snow-LongSleevedShirt", category: "shirt", sex: "male"},
   {name: "FleepTheCloudsheep-HoveringPose", category: "pet", sex: "neutral"},
   {name: "ChipperUpbeatNatural-ForestGreen-Eyes", category: "eyes", sex: "neutral"},
   {name: "BehindTheBlossoms-Blush-Makeup", category: "makeup", sex: "neutral"},
@@ -20,10 +20,10 @@ Item.create!([
   {name: "SkyeERCitizen-PinkNWhite-Skirt", category: "skirt", sex: "female"},
   {name: "SkyeERCitizen-PinkNWhite-Blouse", category: "blouse", sex: "female"},
   {name: "CheckeredPuff-Red-Scarf", category: "scarf", sex: "neutral"},
-  {name: "SkyeERCitizenUniform-Navy-Loafers", category: "shoes", sex: "neutral"},
+  {name: "SkyeERCitizenUniform-Navy-Loafers", category: "shoes", sex: "male"},
   {name: "DraconianRule-Crimson-Eyebrows", category: "eyebrows", sex: "neutral"},
-  {name: "SkyeERCitizen-PinkNWhite-Stockings", category: "stockings", sex: "neutral"},
-  {name: "BehindTheBlossomsFloppy-Pink-KnitSweater", category: "outerwear", sex: "neutral"},
+  {name: "SkyeERCitizen-PinkNWhite-Stockings", category: "stockings", sex: "female"},
+  {name: "BehindTheBlossomsFloppy-Pink-KnitSweater", category: "outerwear", sex: "female"},
   {name: "GrumpySpectre-Indigo-Eyes", category: "eyes", sex: "neutral"},
   {name: "BuddingBeat-White-Headphones", category: "headphones", sex: "neutral"},
   {name: "TrustingPeer-AgateGreen-Eyes", category: "eyes", sex: "neutral"},
@@ -66,7 +66,7 @@ Item.create!([
   {name: "RolledCuff-MedBlue-Jeans", category: "pants", sex: "male"},
   {name: "SkyeERCitizen-PinkNWhite-Shoes", category: "shoes", sex: "female"},
   {name: "BehindTheBlossoms-Red-Glasses", category: "glasses", sex: "neutral"},
-  {name: "WarmThermal-GrayBlue-LongSlvShirt", category: "shirt", sex: "neutral"},
+  {name: "WarmThermal-GrayBlue-LongSlvShirt", category: "shirt", sex: "male"},
   {name: "GentlyCurious-Blush-Makeup", category: "makeup", sex: "neutral"},
   {name: "SkyeERCitizen-PeriwinkleNWhite-Blouse", category: "shirt", sex: "female"},
   {name: "GentlyCurious-Mouth", category: "mouth", sex: "neutral"},
@@ -75,7 +75,7 @@ Item.create!([
   {name: "ReubenStyledSporty-PaleFawn-Hairstyle", category: "hair", sex: "neutral"},
   {name: "GentlyCuriousGaze-AshBrown-Eyebrows", category: "eyebrows", sex: "neutral"},
   {name: "SereneKindness-RedBrown-Eyebrows", category: "eyebrows", sex: "neutral"}
-  
+
 ])
 
 #hook up the contents of the image uploads directory with the appropriate item
