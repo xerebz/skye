@@ -20,7 +20,8 @@ class AvatarsController < ApplicationController
   def edit
     @avatar = current_user.avatar
     gon.avatar = @avatar
-    @items = Item.search(params[:search])
+    @items = Item.search(@avatar.sex,params[:search])
+    puts @avatar.sex
   end
 
   def show
