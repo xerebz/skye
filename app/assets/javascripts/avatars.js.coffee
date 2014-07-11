@@ -70,9 +70,11 @@ $('.avatars.new, .avatars.edit').ready ->
         imageObj = new Image
         wearable = new Kinetic.Image
           image: imageObj
+        imageObj.onload = ->
+          clothes.add(wearable)
+          clothes.draw()
         imageObj.src = @src
-        clothes.add(wearable)
-        clothes.draw()
+
 
     $("#clear-clothes").click ->
       clothes.destroyChildren()
