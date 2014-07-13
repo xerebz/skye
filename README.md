@@ -12,7 +12,7 @@
 8. Run the project: `rails server`
 9. Open the project: [http://localhost:3000](http://localhost:3000)
 
-### Windows
+### Windows (not recommended)
 
 1. Use RailsInstaller to get Ruby on Rails for Windows: http://railsinstaller.org/
 2. Install PostgreSQL from EnterpriseDB: http://www.enterprisedb.com/products/pgdownload.do#windows

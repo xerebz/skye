@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '1.9.3' #testing with using an older ruby version
-gem 'rails', '4.1.1'
+ruby '2.1.2'
+gem 'rails'
 gem 'pg' #postgres
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'carrierwave' #uploads
@@ -12,9 +12,8 @@ gem 'turbolinks'
 gem 'devise'
 gem 'gon'
 gem 'jquery-turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'jbuilder'
+gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
 gem 'rails_12factor'
-gem 'unicorn', :platforms => :ruby #support for developing on windows, don't include this on Windows as it depends on the unix-only tool kgio
-gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin] #required for timezone data on windows
+gem 'unicorn'
