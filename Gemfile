@@ -12,6 +12,9 @@ gem 'turbolinks'
 gem 'devise'
 gem 'gon'
 gem 'jquery-turbolinks'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
