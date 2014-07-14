@@ -41,11 +41,11 @@
 		<%= nav_bar :static => :top, :brand => "Skye: Endless Realm", :brand_link => root_path do %>
 		    <%= menu_group do %>
 		        <%= menu_item "Avatar", avatars_path %>
-		        <%= menu_item "Market", items_path %>
-		        <%= menu_item "Forum", items_path %>
-		        <%= menu_item "Donate", items_path %>
-		        <%= menu_item "Play/Grind", items_path %>
-		        <%= menu_item "Items", items_path %>
+		        <%= menu_item "Play", play_path %>
+		        <%= menu_item "Market", market_path %>
+		        <%= menu_item "Donate", donate_path %>
+		        <%= menu_item "Item Archive", items_path %>
+		        <%= menu_item "Forum", "http://bubblegum.endlessrealm.com" %>
 		    <% end %>
 		    <%= menu_group :pull => :right do %>
 			    <% if current_user %>

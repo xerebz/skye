@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   #display all items for the item catalog
   def index
-    @items = Item.search(params[:search])
+    @items = Item.all
   end
 
   #instantiate a new item and build its images
