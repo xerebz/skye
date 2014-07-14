@@ -42,26 +42,31 @@
 		    <%= menu_group do %>
 		        <%= menu_item "Avatar", avatars_path %>
 		        <%= menu_item "Market", items_path %>
+		        <%= menu_item "Forum", items_path %>
+		        <%= menu_item "Donate", items_path %>
+		        <%= menu_item "Play/Grind", items_path %>
+		        <%= menu_item "Items", items_path %>
 		    <% end %>
 		    <%= menu_group :pull => :right do %>
 			    <% if current_user %>
 			      <%= menu_item "Log Out", destroy_user_session_path, :method => :delete %>
 			    <% else %>
 						<%= menu_item "Sign Up", new_user_registration_path %>
-						
+
 					<% end %>
 		    <% end %>
 		<% end %>
 
 		<div class="container">
-		  <div class="row">
-		    <%= bootstrap_flash %>
-		    <%= yield %>
+	    <%= bootstrap_flash %>
+	    <%= yield %>
 		</div> <!-- /container -->
 
 		<footer>
-		  <p>&copy; Heart Level Up 2014</p>
-		</footer>
+      <div class="container">
+        <p class="text-muted">&copy; 2014 Heart Level Up</p>
+      </div>
+    </footer>
 
   </body>
 </html>
