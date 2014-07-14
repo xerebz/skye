@@ -14,7 +14,7 @@ gem 'gon'
 gem 'jquery-turbolinks'
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
