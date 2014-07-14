@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery-readyselector
+//= require twitter/bootstrap
 //= require_tree .
 
 $(function() {

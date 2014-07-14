@@ -1,18 +1,26 @@
-<%= form_for(@item, :html => { :multipart => true }) do |f| %>
-  <div class="field">
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-</div>
-<p>Hold Ctrl while selecting to upload multiple image layers:</p>
-<%= f.fields_for :images do |p| %>
-  <div class="field">
-  <%= p.label :image_layer %><br>
-  <%= p.file_field :image_layer, :multiple => true, name: "images[image_layer][]" %>
-</div>
-      <% end %>
+<%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :category, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sex, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sex, :class => 'form-control' %>
+    </div>
+  </div>
 
-<div class="actions">
-  <%= f.submit %>
-</div>
-       <% end %>
-       <p></p>
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            items_path, :class => 'btn btn-default' %>
+ 
+<% end %>
