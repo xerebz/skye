@@ -2,7 +2,7 @@ $('.avatars.new, .avatars.edit').ready ->
 
   #Body parts will be drawn in this order
 
-  sex = if gon.avatar then gon.avatar.sex else "Male"
+  gender = if gon.avatar then gon.avatar.gender else "Male"
   skin = if gon.avatar then gon.avatar.skin_tone else "A"
   bodyParts = ['Arm_Front','Hand_Front','Torso','Arm_Back','Hand_Back','Feet','Legs','Head']
 
@@ -38,22 +38,22 @@ $('.avatars.new, .avatars.edit').ready ->
           image: this
         layer.add piece
         layer.draw()
-      art.src = "/assets/"+sex+skin+'_'+part+".png"
+      art.src = "/assets/"+gender+skin+'_'+part+".png"
       arts[part] = art
     
   $ ->
 
-    $("input[name='avatar[sex]']").click ->
-      sex = $(this).val()
+    $("input[name='avatar[gender]']").click ->
+      gender = $(this).val()
       for part in bodyParts
-        arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
+        arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
 
     $("input[name='avatar[skin_tone]']").click ->
       skin = $(this).val()
       for part in bodyParts
-        arts[part].src = "/assets/"+sex+skin+'_'+part+".png"
+        arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
         arts[part].onload = ->
           layer.draw()
 

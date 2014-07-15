@@ -5,11 +5,11 @@ class Item < ActiveRecord::Base
 
 
 
-def self.search(sex, search)
+def self.search(gender, search)
   if search
-    where("sex = ? OR sex = ? AND name ILIKE ?", sex.downcase, "neutral", "%#{search}%")
+    where("gender = ? OR gender = ? AND name ILIKE ?", gender.downcase, "neutral", "%#{search}%")
   else
-    where("sex = ? OR sex = ?", sex.downcase, "neutral")
+    where("gender = ? OR gender = ?", gender.downcase, "neutral")
   end
 end
 

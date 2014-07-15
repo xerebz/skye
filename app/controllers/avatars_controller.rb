@@ -20,8 +20,8 @@ class AvatarsController < ApplicationController
   def edit
     @avatar = current_user.avatar
     gon.avatar = @avatar
-    @items = Item.search(@avatar.sex,params[:search])
-    puts @avatar.sex
+    @items = Item.search(@avatar.gender,params[:search])
+    puts @avatar.gender
   end
 
   def show
@@ -39,7 +39,7 @@ class AvatarsController < ApplicationController
 
   private
   def avatar_params
-    params.require(:avatar).permit(:name, :sex, :skin_tone, :user_id)
+    params.require(:avatar).permit(:name, :gender, :skin_tone, :user_id)
   end
 
 end

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140714211041) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "skin_tone"
-    t.string   "sex"
+    t.string   "gender"
   end
 
   create_table "images", force: true do |t|
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140714211041) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
-    t.string   "sex"
+    t.string   "gender"
   end
 
   create_table "taggings", force: true do |t|

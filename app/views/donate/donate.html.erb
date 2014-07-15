@@ -1,3 +1,5 @@
-<div>You have donated <b> <%= current_user.hearts %> </b> hearts.</div>
+<h1>Donation Center</h1>
+
+<div>You have donated <b> <%= current_user.hearts || 0 %> </b> hearts.</div>
 
 <div><button>Donate some more!</button></div>
