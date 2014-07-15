@@ -17,24 +17,26 @@
 			<p>
 				Donec sed ipsum placerat, venenatis neque eget, sagittis elit. Nulla rutrum magna blandit, fermentum lectus ac, venenatis velit. Praesent congue congue fringilla. In hac habitasse platea dictumst. Aliquam luctus ultricies nibh, ut hendrerit massa ultrices eu. Aenean lectus leo, condimentum convallis nisi a, blandit varius dolor. Nam mattis ipsum non velit semper suscipit. Morbi vestibulum nisl quis tristique mollis. Suspendisse sollicitudin nibh quis faucibus accumsan. Nunc lacinia lacinia velit, sit amet bibendum risus laoreet ac. Phasellus est felis, molestie at aliquam ornare, facilisis ac ipsum. Curabitur ac lacus quis orci viverra tincidunt.
 			</p>
-
+			
 		</div>
 
 	</div>
 
 	<div class="col-md-3">
-		<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+	  <% if not current_user %>
+			<%= form_for(:user, :url => registration_path(:user)) do |f| %>
 
-		  <div><%= f.label :email %><br />
-		  <%= f.email_field :email, autofocus: true %></div>
+			  <div><%= f.label :email %><br />
+			  <%= f.email_field :email, autofocus: true %></div>
 
-		  <div><%= f.label :password %><br />
-		    <%= f.password_field :password, autocomplete: "off" %></div>
+			  <div><%= f.label :password %><br />
+			    <%= f.password_field :password, autocomplete: "off" %></div>
 
-		  <div><%= f.label :password_confirmation %><br />
-		    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+			  <div><%= f.label :password_confirmation %><br />
+			    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-		  <div><%= f.submit "Sign up" %></div>
+			  <div><%= f.submit "Sign up" %></div>
+			<% end %>
 		<% end %>
 	</div>
 
