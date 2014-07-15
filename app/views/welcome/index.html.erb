@@ -23,7 +23,8 @@
 	</div>
 
 	<div class="col-md-3">
-		<%= form_for(:user, :url => session_path(:user)) do |f| %>
+		<%= form_for(:user, :url => registration_path(:user)) do |f| %>
+		  <%= devise_error_messages! %>
 
 		  <div><%= f.label :email %><br />
 		  <%= f.email_field :email, autofocus: true %></div>
