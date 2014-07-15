@@ -4,7 +4,6 @@ gem 'rails'
 gem 'pg' #postgres
 gem 'uglifier'
 gem 'sass-rails'
-gem 'coffee-rails'
 gem 'carrierwave' #uploads
 gem 'acts-as-taggable-on' #tagging
 gem 'jquery-rails'
@@ -15,6 +14,8 @@ gem 'jquery-turbolinks'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+gem 'ember-rails'
+gem 'ember-source'
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
 gem 'spring',        group: :development

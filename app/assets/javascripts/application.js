@@ -14,13 +14,13 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-readyselector
 //= require twitter/bootstrap
-//= require_tree .
+//= require jquery
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require ./skye
 
-$(function() {
-  $("#items_search input").keyup(function() {
-    $.get($("#items_search").attr("action"), $("#items_search").serialize(), null, "script");
-    return false;
-  });
-});
+// for more details see: http://emberjs.com/guides/application/
+Skye = Ember.Application.create();
