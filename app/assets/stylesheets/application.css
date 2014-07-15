@@ -15,7 +15,6 @@ html,body { height:100%; }
 
 .container-main {
 	min-height: 545px;
-	max-height: 750px;
 	width: 1000px;
 }
 
