@@ -1,4 +1,4 @@
-Skye.Store = DS.Store.extend({
+Skye.ApplicationStore = DS.Store.extend({
 
 });
 
