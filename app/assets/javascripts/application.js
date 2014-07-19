@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require twitter/bootstrap
 //= require jquery
 //= require handlebars
@@ -23,4 +21,7 @@
 //= require ./skye
 
 // for more details see: http://emberjs.com/guides/application/
-Skye = Ember.Application.create();
+Skye = Ember.Application.create({
+	rootElement: "#main",
+	LOG_TRANSITIONS: true
+});

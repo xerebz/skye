@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'donate' => 'donate'
   get 'play' => 'play'
   get 'market' => 'market'
+  get 'try_on' => 'try_on'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -45,6 +45,7 @@
 		        <%= menu_item "Market", market_path %>
 		        <%= menu_item "Play", play_path %>
 		        <%= menu_item "Donate", donate_path %>
+            <%= menu_item "Try On", try_on_path %>
 		        <%= menu_item "Item Archive", items_path %>
 		        <%= menu_item "Forum", "http://bubblegum.endlessrealm.com" %>
 		    <% end %>
@@ -67,6 +68,8 @@
 
 		<div class="container container-main">
 	    <%= bootstrap_flash %>
+      <section id="main">
+      </section>
 	    <%= yield %>
 		</div> <!-- /container -->
 
