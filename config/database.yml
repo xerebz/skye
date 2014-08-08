@@ -10,17 +10,15 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
-  username: avatar_demo
-  password: avatar
 
 development:
   <<: *default
-  database: avatar_dev
+  database: skye_development
 
 test:
   <<: *default
-  database: avatar_test
+  database: skye_test
 
 production:
   <<: *default
-  database: avatar_prod
+  database: skye_production
