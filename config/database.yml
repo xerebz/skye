@@ -13,12 +13,12 @@ default: &default
 
 development:
   <<: *default
-  database: avatar_dev
+  database: skye_development
 
 test:
   <<: *default
-  database: avatar_test
+  database: skye_test
 
 production:
   <<: *default
-  database: avatar_prod
+  database: skye_production

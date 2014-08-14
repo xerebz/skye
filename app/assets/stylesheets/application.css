@@ -7,7 +7,14 @@
  *= require_tree .
 */
 
-html,body { height:100%; }
+html, body {
+	height: 100%;
+}
+
+footer {
+	text-align: center;
+  margin-top: 50px;
+}
 
 .container .text-muted {
   margin: 20px 0;
@@ -16,9 +23,4 @@ html,body { height:100%; }
 .container-main {
 	min-height: 545px;
 	width: 1000px;
-}
-
-footer {
-	text-align: center;
-  margin-top: 50px;
 }
