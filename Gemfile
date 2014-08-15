@@ -13,6 +13,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 gem 'ember-rails'
 gem 'ember-source'
+gem 'es6_module_transpiler-rails' #ECMAScript 6 support
 gem 'jbuilder'
 gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
