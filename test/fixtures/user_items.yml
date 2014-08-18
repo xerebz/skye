@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stacking_order: 1
+  flipped: false
+  user_id: 
+  item_id: 
+
+two:
+  stacking_order: 1
+  flipped: false
+  user_id: 
+  item_id: 
