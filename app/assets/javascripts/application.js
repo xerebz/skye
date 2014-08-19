@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require loader
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
@@ -19,10 +18,11 @@
 //= require ember
 //= require ember-data
 //= require_self
+//= require loader
 //= require ./skye
 
 // for more details see: http://emberjs.com/guides/application/
+
 Skye = Ember.Application.create({
-	rootElement: "#main",
-	LOG_TRANSITIONS: true
+	rootElement: "#main"
 });

@@ -1,4 +1,4 @@
-export default Skye.View.extend({
+export default Ember.View.extend({
 
   willDestroyElement: function() {
     $('html').off('mouseup.discourse-topic-admin-menu');

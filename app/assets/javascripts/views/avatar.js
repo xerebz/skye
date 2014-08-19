@@ -1,4 +1,4 @@
-export default Ember.View.extend({
+Skye.Sapp = Ember.View.extend({
   _appendCategoryClass: function(obj, key) {
     var newClass = Em.get(obj, key);
     if (newClass) {
