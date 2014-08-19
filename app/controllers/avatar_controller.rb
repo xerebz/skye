@@ -1,35 +1,29 @@
-class AvatarsController < ApplicationController
+class AvatarController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @avatar = current_user.avatar
+    if current_user.avatar
+      @avatar = current_user.avatar
+    else
+      @avatar = Avatar.new
+    end
   end
 
   def create
-      @avatar = current_user.create_avatar(avatar_params)
-       
-        @avatar.save
-          redirect_to edit_avatar_path(@avatar)
+    @avatar = current_user.create_avatar(avatar_params)
+     
+      @avatar.save
+        redirect_to edit_avatar_path(@avatar)
   end
 
   def new
     @avatar = Avatar.new
-    gon.avatar = @avatar
   end
 
   def edit
     @avatar = current_user.avatar
-    gon.avatar = @avatar
     @items = Item.search(@avatar.gender,params[:search])
     puts @avatar.gender
-  end
-
-  def show
-    #todo
-  end
-
-  def update
-    #todo
   end
 
   def destroy

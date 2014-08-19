@@ -1,31 +1,27 @@
 Skye.CanvasThingComponent = Ember.Component.extend({
   tagName: 'canvas',
-  width: 400,
-  height: 400,
-  attributeBindings: ['width','height'],
+  attributeBindings: ['width', 'height'],
+  width: 625,
+  height: 680,
   didInsertElement: function() {
-    // gotta set ctxf here instead of in init because
-    // the element might not be in the dom yet in init
     this.set('ctx', this.get('element').getContext('2d'));
-    this._empty();
+    this._clear();
     this.draw();
   },
   
   draw: function() {
-    this._empty();
+    this._clear();
     var ctx = this.get('ctx');
     ctx.strokeStyle = '#DE28B3';
     console.log(this.get('data'));
     ctx.strokeText(this.get('data'), this.get('width')/4, this.get('height')/2);
-    
-    // draw some stars yo
     this._star(40, 40);
     this._star(300, 300);
     this._star(123, 250);
     this._star(320, 90);
-  }.observes('width', 'height', 'data'),
+  }.observes('data'),
   
-  _empty: function() {
+  _clear: function() {
     var ctx = this.get('ctx');
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, this.get('width'), this.get('height'));
