@@ -1,4 +1,4 @@
-Skye.CanvasThingComponent = Ember.Component.extend({
+Skye.AvatarPaneComponent = Ember.Component.extend({
   tagName: 'canvas',
   attributeBindings: ['width', 'height'],
   width: 625,

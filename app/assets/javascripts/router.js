@@ -6,6 +6,7 @@ Skye.Router.map(function() {
 	this.route("play");
 	this.route("donate");
 	this.route("try_on");
+	this.route("items");
 });
 
 Skye.Router.reopen({
