@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id          :integer          not null, primary key
+#  item_id     :integer
+#  image_layer :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
