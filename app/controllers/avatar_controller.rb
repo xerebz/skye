@@ -2,11 +2,7 @@ class AvatarController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.avatar
-      @avatar = current_user.avatar
-    else
-      @avatar = Avatar.new
-    end
+    render json: current_user.avatar
   end
 
   def create

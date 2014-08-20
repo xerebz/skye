@@ -9,6 +9,6 @@ Skye.Router.map(function() {
 	this.route("items");
 });
 
-Skye.Router.reopen({
-  location: 'history'
-});
+// Skye.Router.reopen({
+//   location: 'history'
+// });
