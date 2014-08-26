@@ -1,4 +1,4 @@
-$('.avatars.new, .avatars.edit').ready ->
+$('.avatars.new, .avatars.edit, .avatars.try').ready ->
 
   #Body parts will be drawn in this order
 
@@ -40,44 +40,42 @@ $('.avatars.new, .avatars.edit').ready ->
         layer.draw()
       art.src = "/assets/"+gender+skin+'_'+part+".png"
       arts[part] = art
-    
-  $ ->
 
-    $("input[name='avatar[gender]']").click ->
-      gender = $(this).val()
-      for part in bodyParts
-        arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
-        arts[part].onload = ->
-          layer.draw()
+  $("input[name='avatar[gender]']").click ->
+    gender = $(this).val()
+    for part in bodyParts
+      arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
+      arts[part].onload = ->
+        layer.draw()
 
-    $("input[name='avatar[skin_tone]']").click ->
-      skin = $(this).val()
-      for part in bodyParts
-        arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
-        arts[part].onload = ->
-          layer.draw()
+  $("input[name='avatar[skin_tone]']").click ->
+    skin = $(this).val()
+    for part in bodyParts
+      arts[part].src = "/assets/"+gender+skin+'_'+part+".png"
+      arts[part].onload = ->
+        layer.draw()
 
+  $("#item-menu img").click ->
+    imageObj = new Image
+    wearable = new Kinetic.Image
+      image: imageObj
+    imageObj.src = @src
+    clothes.add(wearable)
+    clothes.draw()
+
+  $('#item-menu').bind 'contentchanged', ->
     $("#item-menu img").click ->
       imageObj = new Image
       wearable = new Kinetic.Image
         image: imageObj
+      imageObj.onload = ->
+        clothes.add(wearable)
+        clothes.draw()
       imageObj.src = @src
-      clothes.add(wearable)
-      clothes.draw()
-
-    $('#item-menu').bind 'contentchanged', ->
-      $("#item-menu img").click ->
-        imageObj = new Image
-        wearable = new Kinetic.Image
-          image: imageObj
-        imageObj.onload = ->
-          clothes.add(wearable)
-          clothes.draw()
-        imageObj.src = @src
 
 
-    $("#clear-clothes").click ->
-      clothes.destroyChildren()
-      clothes.draw()
+  $("#clear-clothes").click ->
+    clothes.destroyChildren()
+    clothes.draw()
 
-    redraw()
+  redraw()

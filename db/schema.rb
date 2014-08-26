@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714211041) do
+ActiveRecord::Schema.define(version: 20140826210032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20140714211041) do
     t.string   "skin_tone"
     t.string   "gender"
   end
+
+  create_table "equipped_items", force: true do |t|
+    t.integer  "avatar_id"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "equipped_items", ["avatar_id"], name: "index_equipped_items_on_avatar_id", using: :btree
+  add_index "equipped_items", ["item_id"], name: "index_equipped_items_on_item_id", using: :btree
 
   create_table "images", force: true do |t|
     t.integer  "item_id"
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140714211041) do
     t.datetime "updated_at"
     t.string   "category"
     t.string   "gender"
+    t.string   "item_pack"
   end
 
   create_table "taggings", force: true do |t|
@@ -57,6 +68,16 @@ ActiveRecord::Schema.define(version: 20140714211041) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "user_items", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_items", ["item_id"], name: "index_user_items_on_item_id", using: :btree
+  add_index "user_items", ["user_id"], name: "index_user_items_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

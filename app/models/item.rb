@@ -3,16 +3,16 @@ class Item < ActiveRecord::Base
   accepts_nested_attributes_for :images
   acts_as_taggable
 
+	def self.search(gender, search)
+	  if search
+	    where("gender = ? OR gender = ? AND name ILIKE ?", gender.downcase, "neutral", "%#{search}%")
+	  else
+	    where("gender = ? OR gender = ?", gender.downcase, "neutral")
+	  end
+	end
 
-
-def self.search(gender, search)
-  if search
-    where("gender = ? OR gender = ? AND name ILIKE ?", gender.downcase, "neutral", "%#{search}%")
-  else
-    where("gender = ? OR gender = ?", gender.downcase, "neutral")
-  end
-end
-
-
+	def self.starter_items()
+		where("item_pack = ?", "starter")
+	end
 
 end

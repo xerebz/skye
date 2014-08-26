@@ -20,7 +20,8 @@ class AvatarsController < ApplicationController
   def edit
     @avatar = current_user.avatar
     gon.avatar = @avatar
-    @items = Item.search(@avatar.gender,params[:search])
+    @items = current_user.items
+    gon.items = @items
   end
 
   def show
@@ -29,6 +30,13 @@ class AvatarsController < ApplicationController
 
   def update
     #todo
+  end
+
+  def try
+    @avatar = current_user.avatar
+    gon.avatar = @avatar
+    @items = Item.search(@avatar.gender,params[:search])
+    gon.items = @items
   end
 
   def destroy
