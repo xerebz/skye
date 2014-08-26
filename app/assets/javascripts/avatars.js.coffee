@@ -2,8 +2,8 @@ $('.avatars.new, .avatars.edit').ready ->
 
   #Body parts will be drawn in this order
 
-  gender = if gon.avatar then gon.avatar.gender else "Male"
-  skin = if gon.avatar then gon.avatar.skin_tone else "A"
+  gender = if gon.avatar.gender then gon.avatar.gender else "Male"
+  skin = if gon.avatar.skin_tone then gon.avatar.skin_tone else "A"
   bodyParts = ['Arm_Front','Hand_Front','Torso','Arm_Back','Hand_Back','Feet','Legs','Head']
 
   #Stage where the avatar pieces will be laid together

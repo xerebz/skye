@@ -21,7 +21,6 @@ class AvatarsController < ApplicationController
     @avatar = current_user.avatar
     gon.avatar = @avatar
     @items = Item.search(@avatar.gender,params[:search])
-    puts @avatar.gender
   end
 
   def show
