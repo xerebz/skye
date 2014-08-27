@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_scope :user do
+    get "/sessions/current" => "ember_devise_simple_auth/sessions#show"
+  end
+
+  devise_for :users, controllers: { sessions: 'ember_devise_simple_auth/sessions' }
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,7 +11,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get 'avatar' => 'avatar#index'
   get 'donate' => 'donate'
   get 'play' => 'play'
   get 'market' => 'market'
@@ -21,6 +24,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :items
+  resources :avatars
   
 
   # Example resource route with options:

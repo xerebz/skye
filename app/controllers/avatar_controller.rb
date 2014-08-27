@@ -1,4 +1,4 @@
-class AvatarController < ApplicationController
+class AvatarsController < ApplicationController
   before_action :authenticate_user!
 
   def index

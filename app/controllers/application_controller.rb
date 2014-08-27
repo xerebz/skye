@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActionView::MissingTemplate do |exception|
     render "/layouts/application"
   end
+
+  respond_to :html, :json
   
   def resource_name
     :user
