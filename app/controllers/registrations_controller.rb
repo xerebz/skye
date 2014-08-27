@@ -7,7 +7,9 @@ class RegistrationsController < Devise::RegistrationsController
   	super
   	if resource.save
   		@starter_items = Item.starter_items()
-  		UserItem.create({user_id: resource.id, item_id: 1})
+      @starter_items.each do |starter_item|
+        UserItem.create({user_id: resource.id, item_id: starter_item.id})
+      end
   	end
   end
 

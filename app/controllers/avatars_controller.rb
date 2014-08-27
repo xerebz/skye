@@ -6,10 +6,10 @@ class AvatarsController < ApplicationController
   end
 
   def create
-      @avatar = current_user.create_avatar(avatar_params)
-       
-        @avatar.save
-          redirect_to edit_avatar_path(@avatar)
+    @avatar = current_user.create_avatar(avatar_params)
+     
+      @avatar.save
+        redirect_to edit_avatar_path(@avatar)
   end
 
   def new
@@ -29,7 +29,17 @@ class AvatarsController < ApplicationController
   end
 
   def update
-    #todo
+    @avatar = Avatar.find(params[:id])
+
+    respond_to do |format|
+      if @avatar.update(avatar_params)
+        format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
+        format.json { render :nothing => true }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @avatar.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def try

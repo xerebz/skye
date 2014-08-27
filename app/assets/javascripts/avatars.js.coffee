@@ -62,6 +62,16 @@ $('.avatars.new, .avatars.edit, .avatars.try').ready ->
     imageObj.src = @src
     clothes.add(wearable)
     clothes.draw()
+    console.log(this)
+    $.ajax
+      type: "PUT"
+      url: '/avatars/'+gon.avatar.user_id+'.json'
+      data: JSON.stringify({gender:'Female'})
+      contentType: 'application/json'
+      dataType: 'json'
+      success: (res) ->
+        console.log( res )
+        return false
 
   $('#item-menu').bind 'contentchanged', ->
     $("#item-menu img").click ->
